@@ -15,12 +15,12 @@ const csvProcessingPromise = new Promise((resolve, reject) => {
     .on('end', () => {
       console.log('CSV file successfully processed.');
       resolve(data);
-      // Resolve the promise with the processed data
+  
     })
     .on('error', (error) => {
       console.error('Error processing CSV file:', error);
       reject(error);
-      // Reject the promise if an error occurs
+      
     });
 });
 
@@ -41,7 +41,7 @@ app.get('/banks', (req, res) => {
 app.get('/branches/:bankName', (req, res) => {
   const bankName = req.params.bankName;
 
-// Filtering the data based on the bank name
+
   csvProcessingPromise
     .then((data) => {
       const branches = data.filter((row) => row.bank_name === bankName);
@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
 });
 
 
-// Starting the server
+//  Starting the server 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
