@@ -1,4 +1,4 @@
-# api
+# Implementaion breakdown for REST API endpoints to get the Bank List and its branch details for a specific branch.
 I have used Node.js along with the Express.js web framework to create an API server. Here's a break down of how i came up with the solution:
 Setting up the project:
 I used the necessary dependencies, including Express.js for creating the API server and csv-parser for parsing the CSV data.
